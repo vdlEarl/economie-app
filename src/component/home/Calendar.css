@@ -1,0 +1,20 @@
+.fc-button {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #555 !important;
+  }
+  
+  .fc-button:hover {
+    color: #000 !important;
+  }
+  
+  .fc-toolbar-title {
+    font-size: 1rem !important;
+    font-weight: bold;
+  }
+  
+  .fc-button:focus {
+    outline: none !important;
+  }
+  
