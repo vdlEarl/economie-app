@@ -5,7 +5,10 @@ const cors = require('cors');
 
 const app = express();
 app.use(express.json()); 
-
+app.use(cors({
+  origin: "https://economie-app-1.onrender.com", // URL de ton frontend
+  credentials: true
+}));
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Serveur démarré sur le port ${PORT}`));
 
@@ -16,10 +19,7 @@ const calendrierRoutes = require('./routes/calendrier');
 app.use("/messages", messageRoutes);
 app.use("/users", userRoutes);
 app.use("/", calendrierRoutes);
-const allowedOrigin = 'https://economie-app-1.onrender.com';
-app.use(cors({
-  origin: allowedOrigin,
-}));
+
 const SECRET_KEY = "monsecret"; 
 
 app.post("/login", (req, res) => {
